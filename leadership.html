@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Energy Investment Projects - SHER MOSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏（与其他页面一致） -->
+    <nav>
+        <div class="logo">SHER MOSS</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Strategic Alliance Network</a>
+            <a href="leadership.html">New Energy Investment Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 正方形轮播图容器 -->
+    <div class="investment-slideshow">
+        <!-- 轮播图片 -->
+        <div class="mySlides fade">
+            <img src="images/solar-project.jpg" alt="Solar Energy Project">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/wind-project.jpg" alt="Wind Energy Project">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/storage-project.jpg" alt="Energy Storage Project">
+        </div>
+
+        <!-- 左右导航按钮 -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- 轮播指示点 -->
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- 页面主内容 -->
+    <main>
+        <section class="content-section">
+            <h2 class="section-title">New Energy Investment Projects</h2>
+
+            <!-- 投资方向模块（卡片式布局） -->
+            <div class="core-section">
+                <h3 class="sub-title tech-subtitle">Investment Directions <i class="fas fa-chart-line"></i></h3> <!-- 新增科技感图标 -->
+                <div class="tech-grid"> <!-- 新增网格布局容器 -->
+                    <div class="tech-card"> <!-- 科技感卡片 -->
+                        <i class="fas fa-solar-panel tech-icon"></i> <!-- 太阳能图标 -->
+                        <p class="tech-text">Solar Photovoltaic Power Plant Development & Operation</p>
+                    </div>
+                    <div class="tech-card">
+                        <i class="fas fa-wind tech-icon"></i> <!-- 风力图标 -->
+                        <p class="tech-text">Wind Power Projects</p>
+                    </div>
+                    <div class="tech-card">
+                        <i class="fas fa-battery-full tech-icon"></i> <!-- 储能图标 -->
+                        <p class="tech-text">Battery Energy Storage Systems (BESS)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 投资策略模块（卡片式布局） -->
+            <div class="core-section">
+                <h3 class="sub-title tech-subtitle">Investment Strategies <i class="fas fa-rocket"></i></h3> <!-- 新增科技感图标 -->
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <i class="fas fa-lightbulb tech-icon"></i> <!-- 策略图标 -->
+                        <p class="tech-text">Focus on markets with clear business models, stable return expectations, and policy support.</p>
+                    </div>
+                    <div class="tech-card">
+                        <i class="fas fa-handshake tech-icon"></i> <!-- 合作图标 -->
+                        <p class="tech-text">Seek partnerships with industry-leading technology providers and project developers.</p>
+                    </div>
+                    <div class="tech-card">
+                        <i class="fas fa-chart-pie tech-icon"></i> <!-- 生命周期图标 -->
+                        <p class="tech-text">Focus on value creation throughout the project lifecycle.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚（与其他页面一致） -->
+    <footer>
+        <p>B10, RM 2703 NEW TREND CENTRE, 704 PRINCE EDWARD ROAD EAST, SAN PO KONG, HONG KONG</p>
+        <p>Email: tracy83cn@126.com</p>
+    </footer>
+
+    <!-- 轮播图脚本 -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+</html>
