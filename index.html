@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHER MOSS - Energy Solutions Provider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">SHERMOSS</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <!-- 删除原有的Strategic Alliance Network链接 -->
+            <a href="leadership.html">New Energy Investment Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main>
+        <!-- 轮播图容器（上移至英雄区位置） -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/oil-refinery.jpg" style="width:100%" alt="Traditional Energy">
+                <div class="slide-text">
+                    <h2>Integrated Energy Solutions</h2>
+                    <p>Bridging Traditional & New Energy Futures</p>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="images/charging-station.jpg" style="width:100%" alt="New Energy">
+                <div class="slide-text">
+                    <h2>Integrated Energy Solutions</h2>
+                    <p>Bridging Traditional & New Energy Futures</p>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="images/power-plant.jpg" style="width:100%" alt="Power Station">
+                <div class="slide-text">
+                    <h2>Integrated Energy Solutions</h2>
+                    <p>Bridging Traditional & New Energy Futures</p>
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- 原英雄区已移除 -->
+        <!-- <section id="home" class="hero">
+            <h1>Integrated Energy Solutions</h1>
+            <p>Bridging Traditional & New Energy Futures</p>
+        </section> -->
+
+        <section id="services" class="content-section">
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-card">
+                    <h3>Traditional Energy</h3>
+                    <p>Oil & natural gas trading consultation with refineries in USA, Middle East, and Kazakhstan.</p>
+                </div>
+                <div class="service-card">
+                    <h3>New Energy</h3>
+                    <p>Construction of frequency regulation power stations and EV charging infrastructure.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>B10, RM 2703 NEW TREND CENTRE, 704 PRINCE EDWARD ROAD EAST, SAN PO KONG, HONG KONG</p>
+        <p>Email: jiajiay@shermoss.com</p>
+    </footer>
+
+    <!-- 轮播图脚本 -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // 手动切换
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // 导航点切换
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        // 显示当前页
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+            const dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            
+            // 隐藏所有图片
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // 重置导航点
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            // 显示当前图片和导航点
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        // 自动轮播（每5秒切换）
+        setInterval(() => plusSlides(1), 5000);
+    </script>
+</body>
+</html>
